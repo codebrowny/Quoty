@@ -1,0 +1,290 @@
+body {
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f1f9;
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM91 60h-2V40h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM39.32 74l-1 1.732-17.32-10L22 64l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM71 80h-2V60h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM120 89v2h-20v-2h20zm-84.134 9.16l-1.732 1-10-17.32 1.732-1 10 17.32zM51 100h-2V80h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM100 109v2H80v-2h20zm19.32 5l-1 1.732-17.32-10 1-1.732 17.32 10zM31 120h-2v-20h2v20z' fill='%23959498' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  /* pop-up */
+  .pop-up {
+    position: fixed;
+    width: 30%;
+    height: 30%;
+    max-width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    padding: 40px;
+    justify-content: space-around;
+    z-index: 60;
+    box-shadow: 5px 4px 20px black;
+    animation: opening-pop-up 0.2s ease-in alternate;
+    background-color: #ffffff;
+    font-size: 18px;
+  }
+  .vanish {
+    display: none;
+  }
+  #pop-up-message {
+    text-align: center;
+  }
+  
+  #ok-btn {
+    width: 90px;
+    height: 40px;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(99, 99, 220);
+    color: white;
+    cursor: pointer;
+  }
+  #ok-btn:active {
+    transform: scale(1.1);
+  }
+  /* keyframe for the pop-up */
+  @keyframes opening-pop-up {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+  
+  /* nav section styles */
+  nav {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 60px;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    cursor: pointer;
+  }
+  img:active {
+    transform: scale(1.1);
+  }
+  
+  /* nav section new quote button container */
+  .btn-cont {
+    width: 30%;
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+  
+  /* twitter image container */
+  .img-cont {
+    width: 50%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  
+  /* new quote button styles */
+  #new-quote-btn {
+    width: 130px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgb(51, 51, 51);
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 3px rgba(121, 121, 121, 0.65);
+    position: relative;
+    top: -10px;
+  }
+  #new-quote-btn:active {
+    transform: translate(0, 3px);
+  }
+  
+  /* quote section styles */
+  .quote-section {
+    min-height: 90vh;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* the quote container styles */
+  .quote-container {
+    width: 70%;
+    min-height: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    animation: opening 0.8s ease-in;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #quote-text-cont {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 40px;
+  }
+  
+  #left-symbol {
+    font-size: 60px;
+    position: relative;
+    top: 60px;
+  }
+  
+  #quote {
+    text-align: center;
+    word-wrap: break-word;
+    /* border: 1px solid red; */
+    height: 50%;
+    padding: 60px;
+    font-size: calc(34px + 1px);
+    font-family: "Karla", sans-serif;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.5); */
+  }
+  
+  #author-cont {
+    /* border: 1px solid red; */
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  .author {
+    text-align: center;
+    font-size: 25px;
+    text-decoration: underline;
+    font-family: "Karla", sans-serif;
+    background-color: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+  }
+  
+  .overlay.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    pointer-events: none;
+    animation: opening 0.5s linear alternate;
+  }
+  .overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  /* keyframe for the overlay */
+  @keyframes opening {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* loader */
+  .loader {
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #333;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  /* keyframe for the loader */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* helper classes */
+  .long-text {
+    padding: 20px;
+    height: 20%;
+  }
+  .invisible {
+    display: none;
+  }
+  
+  /* responsive styling using media queryies */
+  
+  @media screen and (max-width: 650px) {
+    #quote-text-cont #quote {
+      font-size: 25px;
+      padding: 10px;
+    }
+    #quote-text-cont #left-symbol {
+      font-size: 36px;
+      position: relative;
+      top: 50px;
+      left: -40px;
+    }
+    header nav #new-quote-btn {
+      position: relative;
+      top: 3px;
+      left: 3px;
+      padding-top: 4px;
+    }
+    #author-cont .author {
+      position: relative;
+      top: 30px;
+    }
+    header nav #twitterImg {
+      position: relative;
+      left: 30px;
+    }
+    .author {
+      text-decoration: none;
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    header nav #twitterImg {
+      position: relative;
+      top: 15px;
+    }
+  }
+  @media screen and (max-width: 326px) {
+    .quote-section .quote-container #quote-text-cont #left-symbol {
+      padding: 40px;
+    }
+  }
+  
+  @media screen and (max-width: 980px) {
+    .pop-up {
+      font-size: 13px;
+    }
+  }
+  
+  @media screen and (max-width: 790px) {
+    .pop-up {
+      padding: 40px;
+    }
+  }
+  
